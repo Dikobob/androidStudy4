@@ -1,4 +1,4 @@
-package com.example.criminalintent;
+package com.example.nerdlauncher;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -13,7 +13,7 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(getLayoutResId());
+        setContentView(R.layout.activity_fragment);
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
@@ -23,10 +23,5 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
                     .add(R.id.fragment_container, fragment)
                     .commit();
         }
-    }
-
-    @LayoutRes
-    protected int getLayoutResId() {
-        return R.layout.activity_masterdetail;
     }
 }
